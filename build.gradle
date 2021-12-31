@@ -1,5 +1,6 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.10'
     id 'application'
 }
 
@@ -11,12 +12,13 @@ repositories {
 }
 
 application {
-    mainClass = 'io.ktor.server.netty.EngineMain'
+    mainClass = 'io.ktor.server.cio.EngineMain'
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     implementation "io.ktor:ktor-server-core:1.6.7"
-    implementation "io.ktor:ktor-server-netty:1.6.7"
+    implementation "io.ktor:ktor-server-cio:1.6.7"
+    implementation "io.ktor:ktor-serialization:1.6.7"
     implementation "ch.qos.logback:logback-classic:1.2.10"
 }
